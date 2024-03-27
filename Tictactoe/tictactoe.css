@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+h1 {
+    color: #333;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(50px, 1fr)); /* Responsive grid columns */
+    grid-gap: 5px;
+    margin: 20px auto;
+    max-width: 300px; /* Limit maximum width of the game board */
+}
+
+.cell {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 100%;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    font-size: 40px;
+    display: flex;
+    align-items: stretch;
+    cursor: pointer;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.cell:hover {
+    background-color: #f9f9f9;
+}
+
+.cell::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto; /* Center the X or O */
+}
+
+.message {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 600px; /* Adjust maximum width for larger screens */
+    }
+
+    .game-board {
+        max-width: 400px; /* Adjust maximum width of the game board */
+    }
+}
+
+
